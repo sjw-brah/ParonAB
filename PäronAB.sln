@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PäronAB.Domain", "PäronAB.Domain\PäronAB.Domain.csproj", "{FA285142-7096-44BF-8A7F-138006E081DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PäronAB.DataAccessLayer", "PäronAB.DataAccessLayer\PäronAB.DataAccessLayer.csproj", "{C0B97B55-9F97-47CF-8CF6-449E07A9B1CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PäronAB.UI", "PäronAB.UI\PäronAB.UI.csproj", "{F8EE890B-BCB6-4465-898B-555E13F3764A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA285142-7096-44BF-8A7F-138006E081DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA285142-7096-44BF-8A7F-138006E081DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA285142-7096-44BF-8A7F-138006E081DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA285142-7096-44BF-8A7F-138006E081DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B97B55-9F97-47CF-8CF6-449E07A9B1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B97B55-9F97-47CF-8CF6-449E07A9B1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B97B55-9F97-47CF-8CF6-449E07A9B1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B97B55-9F97-47CF-8CF6-449E07A9B1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8EE890B-BCB6-4465-898B-555E13F3764A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8EE890B-BCB6-4465-898B-555E13F3764A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8EE890B-BCB6-4465-898B-555E13F3764A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8EE890B-BCB6-4465-898B-555E13F3764A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
