@@ -1,38 +1,52 @@
-﻿@model PäronAB.UI.ViewModels.TransactionViewModel
+﻿@model List<PäronAB.UI.ViewModels.TransactionViewModel>
 
 @{
     ViewBag.Title = "Transactions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@{
+    var warehouses = Model.FirstOrDefault().Warehouses;
+    var products = Model.FirstOrDefault().Products;
+}
 <h2>Add transaction</h2>
 <form action="Transaction/Index" method="post">
-    <table class="table">
+    <table class="table table-responsive">
         <tr>
             <td>Date</td>
             <td>
-                <input id="date" name="Date" type="date" value="" class="form-control" required="required" />
+                <input id="date" name="date" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" min="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" required="required" />
             </td>
         </tr>
         <tr>
-            <td>SKU</td>
+            <td>Product</td>
             <td>
-                <input id="sku" name="sku" type="text" value="" class="form-control" required="required" />
+                <select name="product">
+                    @foreach (var product in products)
+                    {
+                        if (products != null)
+                        {
+                            <option value="@product.SKU" id="sku">@product.Name</option>
+                        }
+                    }
+                </select>
             </td>
         </tr>
         <tr>
             <td>Quantity</td>
             <td>
-                <input id="qty" name="qty" type="number" value="" class="form-control" required="required" />
+                <input id="qty" name="qty" type="number" value="0" class="form-control" required="required" />
             </td>
         </tr>
         <tr>
             <td>Warehouse ID</td>
             <td>
-                <select id="warehouseId">
-                    @foreach (var warehouse in Model)
+                <select name="warehouse">
+                    @foreach (var warehouse in warehouses)
                     {
-
+                        if (warehouses != null)
+                        {
+                            <option value="@warehouse.ID" id="warehouse">@warehouse.Name</option>
+                        }
                     }
                 </select>
                 @*<input id="warehouseId" name="warehouseId" type="number" min="0" value="" class="form-control" required="required" />*@
@@ -45,5 +59,7 @@
     </table>
 </form>
 
-@Html.Partial("TransactionPartial");
+@Html.Partial("TransactionPartial")
+
+
 
