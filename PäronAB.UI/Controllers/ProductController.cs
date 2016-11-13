@@ -3,10 +3,6 @@ using PäronAB.Domain.Interfaces;
 using PäronAB.Domain.Models;
 using PäronAB.Domain.Services;
 using PäronAB.UI.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PäronAB.UI.Controllers
@@ -14,10 +10,7 @@ namespace PäronAB.UI.Controllers
     public class ProductController : Controller
     {
         IProductService _productService;
-        //public ProductController(ProductService productService)
-        //{
-        //    _productService = productService;
-        //}
+
         public ProductController()
         {
             _productService = new ProductService(new ProductRepository());

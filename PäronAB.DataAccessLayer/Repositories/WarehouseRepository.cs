@@ -1,10 +1,7 @@
 ﻿using PäronAB.Domain.Interfaces;
-using System;
+using PäronAB.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PäronAB.Domain.Models;
 
 namespace PäronAB.DataAccessLayer.Repositories
 {

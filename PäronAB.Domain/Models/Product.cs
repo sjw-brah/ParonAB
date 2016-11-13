@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace PäronAB.Domain.Models
+﻿namespace PäronAB.Domain.Models
 {
     public class Product
     {

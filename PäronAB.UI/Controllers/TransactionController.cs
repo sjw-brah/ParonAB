@@ -6,7 +6,6 @@ using PäronAB.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PäronAB.UI.Controllers
@@ -16,10 +15,7 @@ namespace PäronAB.UI.Controllers
         ITransactionService _transactionService;
         IWarehouseRepository _warehouseRepository;
         IProductRepository _productRepository;
-        //public TransactionController(ITransactionService transactionService)
-        //{
-        //    _transactionService = transactionService;
-        //}
+
         public TransactionController()
         {
             _transactionService = new TransactionService(new TransactionRepository());

@@ -3,10 +3,6 @@ using PäronAB.Domain.Interfaces;
 using PäronAB.Domain.Models;
 using PäronAB.Domain.Services;
 using PäronAB.UI.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PäronAB.UI.Controllers
