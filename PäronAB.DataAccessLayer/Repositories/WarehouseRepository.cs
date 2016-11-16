@@ -30,7 +30,7 @@ namespace PäronAB.DataAccessLayer.Repositories
             var warehouse = _warehouseList.FirstOrDefault(x => x.ID == w.ID);
             if (warehouse == null)
             {
-                w.ID = _warehouseList.Count;
+                //w.ID = _warehouseList.Max(i => i.ID) + 1;
                 _warehouseList.Add(w);
             }
             else

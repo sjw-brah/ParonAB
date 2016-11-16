@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<PäronAB.UI.ViewModels.TransactionViewModel>
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Date)
@@ -17,7 +17,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.OrderByDescending(d=>d.Date)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
@@ -28,7 +28,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Warehouse)
         </td>
-        <td>
+        <td class="sum">
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
     </tr>

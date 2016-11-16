@@ -23,10 +23,13 @@ namespace PäronAB.UI.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Index(string sku, string name, decimal price)
+        public ActionResult Index(string sku = null, string name = null, decimal price = 0)
         {
-            var product = new Product { Name = name, SKU = sku, UnitPrice = price };
-            _productService.SaveProduct(product);
+            if (sku != null && name != null && price != 0)
+            {
+                var product = new Product { Name = name, SKU = sku, UnitPrice = price };
+                _productService.SaveProduct(product);
+            }
 
             return RedirectToAction("Index");
 

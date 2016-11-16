@@ -1,13 +1,7 @@
 ﻿body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.data-monetary-amount
-    {
-    color:red;
-    }
+
 h2{
     font-size:2.7em;
-}
-h2:hover{
-    box-shadow:10px 5px 10px;
 }

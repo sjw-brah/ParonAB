@@ -25,10 +25,13 @@ namespace PäronAB.UI.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Index(int id, string name)
+        public ActionResult Index(int id = 0, string name = null)
         {
-            var warehouse = new Warehouse { ID = id, Name = name };
-            _warehouseService.SaveWarehouse(warehouse);
+            if (id > 0 && name != null)
+            {
+                var warehouse = new Warehouse { ID = id, Name = name };
+                _warehouseService.SaveWarehouse(warehouse);
+            }
 
             return RedirectToAction("Index");
         }

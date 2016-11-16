@@ -29,7 +29,7 @@ namespace PäronAB.DataAccessLayer.Repositories
 
             if (product == null)
             {
-                p.ID = _productList.Count;
+                p.ID = _productList.Max(i => i.ID) + 1;
                 _productList.Add(p);
             }
             else

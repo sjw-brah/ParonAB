@@ -49,24 +49,39 @@ namespace PäronAB.UI.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection form)
         {
-            string sku = form["product"];
-            int warehouseId = int.Parse(form["warehouse"].ToString());
-            string date = form["date"].ToString();
-            int qty = int.Parse(form["qty"].ToString());
+            bool isValidPost = true;
 
-            var product = _productRepository.GetBySKU(sku);
-
-            var transaction = new Transaction
+            for (int i = 0; i < form.AllKeys.Count(); i++)
             {
-                Date = DateTime.Parse(date),
-                ID = Guid.NewGuid(),
-                ProductId = sku,
-                Quantity = qty,
-                Sum = qty * product.UnitPrice,
-                WarehouseId = warehouseId
-            };
+                if (form.Get(i) == "")
+                {
+                    isValidPost = false;
+                    break;
+                }
 
-            _transactionService.SaveTransaction(transaction);
+            }
+            if (isValidPost)
+            {
+                string sku = form["product"];
+                int warehouseId = int.Parse(form["warehouse"].ToString());
+                string date = form["date"].ToString();
+                int qty = int.Parse(form["qty"].ToString());
+
+                var product = _productRepository.GetBySKU(sku);
+
+                var transaction = new Transaction
+                {
+                    Date = DateTime.Parse(date),
+                    ID = Guid.NewGuid(),
+                    ProductId = sku,
+                    Quantity = qty,
+                    Sum = qty * product.UnitPrice,
+                    WarehouseId = warehouseId
+                };
+
+                _transactionService.SaveTransaction(transaction);
+            }
+
 
             return RedirectToAction("Index");
         }
